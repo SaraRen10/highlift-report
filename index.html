@@ -4,10 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Highlift 报工系统</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const worker = params.get("worker");
+    if (!worker) {
+      document.write("<h2 style='color:red;text-align:center;margin-top:2rem;'>❌ 未授权访问，请通过扫码进入</h2>");
+    } else {
+      document.write("<h2 style='text-align:center;margin-top:2rem;'>✅ 欢迎 " + worker + " 报工</h2>");
+      document.write("<p style='text-align:center;'>（此为测试页面，请替换为正式系统代码）</p>");
+    }
+  </script>
 </head>
-<body>
-  <h1>✅ 这是正式报工系统页面</h1>
-  <p>功能包括：扫码报工、管理员登录、导出 Excel、异常标记</p>
-  <p>如果你看到这个页面，说明部署成功！</p>
-</body>
+<body></body>
 </html>
